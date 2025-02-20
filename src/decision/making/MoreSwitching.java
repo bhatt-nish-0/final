@@ -35,5 +35,27 @@ public class MoreSwitching {
             case 10, 11, 12 -> "Fall-";
         };
         System.out.print(value);
+        printWeather(2);
+    }
+
+    void printWeather(int rain) {
+        switch (rain) {
+            case 0 -> System.out.print("Dry");
+            case 1 -> System.out.print("Wet");
+            case 2 -> System.out.print("Storm");
+        }
+    }
+
+    int sizey() {
+        int measurement = 10;
+        int size = switch (measurement) {
+            case 5 -> Integer.valueOf(1);
+            case 10 -> (short)2;
+            default -> 3;
+            //case 20 -> "4"; // DOES NOT COMPILE
+            //case 40 -> 5L; // DOES NOT COMPILE
+            //case 50 -> null; // DOES NOT COMPILE
+        };
+        return size;
     }
 }
